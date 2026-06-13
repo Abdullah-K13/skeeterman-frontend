@@ -5,9 +5,9 @@ const LogoBanner = () => {
       <div className="container mx-auto px-4 relative">
         <div className="reveal flex justify-center">
           <img
-            src="https://skeetermanandturfninja.com/wp-content/uploads/2025/06/Skeeterman_Turf_Ninja.webp"
+            src="/images/logo.png"
             alt="Skeeterman & Turf Ninja"
-            className="max-w-3xl w-full object-contain drop-shadow-2xl"
+            className="max-w-xs sm:max-w-xl md:max-w-3xl w-full object-contain drop-shadow-2xl"
           />
         </div>
       </div>

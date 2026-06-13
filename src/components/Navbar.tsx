@@ -42,9 +42,9 @@ const Navbar = () => {
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
           <a href="#hero-section" className="flex items-center">
             <img
-              src="https://skeetermanandturfninja.com/wp-content/uploads/2025/06/Skeeterman_Turf_Ninja.webp"
+              src="/images/logo.png"
               alt="Skeeterman & Turf Ninja"
-              className="h-14 object-contain"
+              className="h-10 sm:h-14 object-contain"
             />
           </a>
 
@@ -53,27 +53,34 @@ const Navbar = () => {
             <a href="#about-us" className="text-foreground/80 hover:text-primary font-medium transition-colors text-sm tracking-wide uppercase">About Us</a>
             <a href="#services" className="text-foreground/80 hover:text-primary font-medium transition-colors text-sm tracking-wide uppercase">Our Services</a>
             <a href="#faq" className="text-foreground/80 hover:text-primary font-medium transition-colors text-sm tracking-wide uppercase">FAQ</a>
-            <a href="#contact" className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:bg-red-glow transition-colors animate-pulse-glow">
+            <a href="tel:9109982281" className="px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold text-sm hover:bg-red-glow transition-colors animate-pulse-glow">
               Get A Quote
             </a>
-            <a href="#" className="px-5 py-2.5 border border-foreground/20 text-foreground rounded-lg font-semibold text-sm hover:border-primary hover:text-primary transition-colors">
+            <a href="https://skeetermanandturfninja.net/" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 border border-foreground/20 text-foreground rounded-lg font-semibold text-sm hover:border-primary hover:text-primary transition-colors">
               Payment Portal
             </a>
           </div>
 
-          {/* Mobile toggle */}
-          <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile: Payment Portal + toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <a href="https://skeetermanandturfninja.net/" target="_blank" rel="noopener noreferrer" className="px-3 py-2 border border-foreground/20 text-foreground rounded-lg font-semibold text-xs hover:border-primary hover:text-primary transition-colors">
+              Payment Portal
+            </a>
+            <button className="text-foreground p-2 -mr-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="md:hidden glass-strong border-t border-border/30 px-4 py-6 space-y-4">
-            <a href="#about-us" onClick={() => setMobileOpen(false)} className="block text-foreground/80 hover:text-primary font-medium">About Us</a>
-            <a href="#services" onClick={() => setMobileOpen(false)} className="block text-foreground/80 hover:text-primary font-medium">Our Services</a>
-            <a href="#faq" onClick={() => setMobileOpen(false)} className="block text-foreground/80 hover:text-primary font-medium">FAQ</a>
-            <a href="#contact" onClick={() => setMobileOpen(false)} className="block px-5 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold text-sm text-center">Get A Quote</a>
+          <div className="md:hidden glass-strong border-t border-border/30 px-4 py-5 space-y-1">
+            <a href="#about-us" onClick={() => setMobileOpen(false)} className="block py-3 text-foreground/80 hover:text-primary font-medium">About Us</a>
+            <a href="#services" onClick={() => setMobileOpen(false)} className="block py-3 text-foreground/80 hover:text-primary font-medium">Our Services</a>
+            <a href="#faq" onClick={() => setMobileOpen(false)} className="block py-3 text-foreground/80 hover:text-primary font-medium">FAQ</a>
+            <div className="pt-2">
+              <a href="tel:9109982281" onClick={() => setMobileOpen(false)} className="block px-5 py-3 bg-primary text-primary-foreground rounded-lg font-semibold text-sm text-center">Get A Quote</a>
+            </div>
           </div>
         )}
       </nav>
